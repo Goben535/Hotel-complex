@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бронирование номера — Гранд Отель</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <span id="logo"></span>
+            </div>
+            <nav class="nav"><ul id="nav"></ul></nav>
+            <div class="contact-info">
+                <span id="phone"></span>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="section-h2">
+            <h1>Бронирование номера</h1>
+            <p>Заполните форму для бронирования выбранного номера.</p>
+        </section>
+
+        <div class="grid contacts">
+            <div class="card">
+                <h3>Контактная информация</h3>
+                <div class="item">
+                    <div>
+                        <strong>Наш адрес</strong>
+                        <p id="addr-info"></p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div>
+                        <strong>Телефоны</strong>
+                        <p id="phone-info"></p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div>
+                        <strong>Email</strong>
+                        <p id="email-info"></p>
+                    </div>
+                </div>
+            </div>
+
+            <form id="form-book" class="form">
+                <div class="group">
+                    <label for="name">Имя</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="group">
+                    <label for="phone">Телефон</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="group">
+                    <label for="checkin">Дата заезда</label>
+                    <input type="date" id="checkin" name="checkin" required>
+                </div>
+                <div class="group">
+                    <label for="checkout">Дата выезда</label>
+                    <input type="date" id="checkout" name="checkout" required>
+                </div>
+                <div class="group">
+                    <label for="guests">Количество гостей</label>
+                    <input type="number" id="guests" name="guests" min="1" required>
+                </div>
+                <div class="group">
+                    <label for="comments">Комментарии</label>
+                    <textarea id="comments" name="comments"></textarea>
+                </div>
+                <button type="submit" class="btn">Отправить заявку</button>
+            </form>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="col">
+                <h3 id="logo-footer"></h3>
+                <p id="desc-footer" class="text"></p>
+            </div>
+            <div class="col">
+                <h4>Навигация</h4>
+                <ul id="nav-footer"></ul>
+            </div>
+            <div class="col">
+                <h4>Контакты</h4>
+                <p id="addr-footer" class="text"></p>
+                <p id="phone-footer" class="text"></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты — Гранд Отель</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-text" id="logo"></span>
+            </div>
+            <nav class="nav"><ul id="nav"></ul></nav>
+            <div class="contact-info">
+                <span id="phone"></span>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="section-h2">
+            <h2 id="title-contacts"></h2>
+            <p id="desc-contacts"></p>
+        </section>
+
+        <div class="grid contacts">
+            <div class="card">
+                <h3>Контактная информация</h3>
+                <div class="item">
+                    <div>
+                        <strong>Наш адрес</strong>
+                        <p id="addr-info"></p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div>
+                        <strong>Телефоны</strong>
+                        <p id="phone-info"></p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div>
+                        <strong>Email</strong>
+                        <p id="email-info"></p>
+                    </div>
+                </div>
+            </div>
+
+            <form class="form" id="form-msg">
+                <h3>Написать сообщение</h3>
+                <div class="row">
+                    <div class="group">
+                        <label>Ваше имя</label>
+                        <input type="text" name="name">
+                    </div>
+                    <div class="group">
+                        <label>Телефон</label>
+                        <input type="tel" name="phone">
+                    </div>
+                </div>
+                <div class="group">
+                    <label>Email</label>
+                    <input type="email" name="email">
+                </div>
+                <div class="group">
+                    <label>Сообщение</label>
+                    <textarea name="message" rows="5"></textarea>
+                </div>
+                <button type="submit" class="btn">Отправить сообщение</button>
+            </form>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="col">
+                <div class="logo">
+                    <span id="logo-footer"></span>
+                </div>
+                <p id="desc-footer" class="text"></p>
+            </div>
+            <div class="col">
+                <h4>Навигация</h4>
+                <ul id="nav-footer"></ul>
+            </div>
+            <div class="col">
+                <h4>Свяжитесь с нами</h4>
+                <p class="text" id="addr-footer"></p>
+                <p class="text" id="phone-footer"></p>
+            </div>
+        </div>
+        <div class="footer-bottom"><p id="copy"></p></div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

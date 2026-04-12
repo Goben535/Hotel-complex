@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hotel>
+    <info>
+        <name>Гойда Отель</name>
+        <phone>+375 (29) 519-14-88</phone>
+        <address>г. Минск, ул. Свердлова, 13а</address>
+        <desc>Ваш идеальный отдых начинается здесь. Лучший сервис, комфортабельные номера и незабываемые впечатления.</desc>
+        <copyright>© 2026 Гостиничный комплекс "Гойда Отель". Все права защищены.</copyright>
+        <currency>€</currency>
+    </info>
+    
+    <navigation>
+        <item link="index.html">Главная</item>
+        <item link="rooms.html">Номера и цены</item>
+        <item link="form.html">Бронирование</item>
+        <item link="contacts.html">Контакты</item>
+    </navigation>
+
+    <hero>
+        <title>Откройте для себя идеальный отдых</title>
+        <subtitle>Эксклюзивные номера, премиальный сервис и незабываемые впечатления в самом сердце города.</subtitle>
+    </hero>
+
+    <rooms_page>
+        <title>Номера и цены</title>
+        <description>Выберите идеальный номер для вашего отдыха. Все цены актуальны на момент бронирования.</description>
+    </rooms_page>
+
+    <rooms_list>
+        <room>
+            <id>1</id>
+            <title>Стандартный номер</title>
+            <price>60</price>
+            <image>img/room1.jpg</image>
+            <features>До 2 мест | 1 кровать</features>
+            <desc>Уютный однокомнатный номер с двуспальной кроватью, рабочей зоной и собственной ванной комнатой.</desc>
+        </room>
+        <room>
+            <id>2</id>
+            <title>Люкс с видом на город</title>
+            <price>120</price>
+            <image>img/room2.jpg</image>
+            <features>До 3 мест | 1 кровать</features>
+            <desc>Просторный номер с панорамными окнами, гостиной зоной и премиальными удобствами.</desc>
+        </room>
+        <room>
+            <id>3</id>
+            <title>Семейный апартамент</title>
+            <price>180</price>
+            <image>img/room3.jpg</image>
+            <features>До 4 мест | 2 кровати</features>
+            <desc>Двухкомнатный номер с мини-кухней, идеально подходящий для комфортного отдыха с детьми.</desc>
+        </room>
+    </rooms_list>
+    <contacts_page>
+        <title>Свяжитесь с нами</title>
+        <subtitle>Остались вопросы? Напишите нам, и наши менеджеры свяжутся с вами в ближайшее время.</subtitle>
+        <emails>
+            <item>goydahotel@gmail.com</item>
+            <item>svozov@gmail.com</item>
+        </emails>
+        <schedule>
+            <item>Служба бронирования: Круглосуточно</item>
+            <item>Ресепшн: Круглосуточно</item>
+        </schedule>
+    </contacts_page>
+</hotel>
