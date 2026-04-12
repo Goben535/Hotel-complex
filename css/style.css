@@ -416,6 +416,27 @@ body {
   line-height: 1.5;
 }
 
+.burger-checkbox {
+  display: none;
+}
+
+.burger-btn {
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  width: 30px;
+}
+
+.burger-btn span {
+  display: block;
+  height: 3px;
+  background: black;
+}
+
 @media (max-width: 1024px) {
   .hero h1 {
     font-size: 3rem;
@@ -434,8 +455,44 @@ body {
   }
 }
 @media (max-width: 768px) {
-  .header .nav ul {
+  .header {
+    position: relative;
+  }
+  .contact-info {
     display: none;
+  }
+  .burger-btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .header .nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: white;
+    border-bottom: 1px solid lightgray;
+    z-index: 10;
+    display: none;
+  }
+  .header .nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 20px 0;
+    margin: 0;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 15px;
+  }
+  .burger-checkbox:checked ~ .nav {
+    display: block;
   }
   .hero {
     height: 60vh;
@@ -444,26 +501,11 @@ body {
   .hero h1 {
     font-size: 2.5rem;
   }
-  .hero p {
-    font-size: 0.9rem;
-  }
-  .btn {
-    padding: 12px 25px;
-    font-size: 1rem;
-  }
-  .room-grid {
-    grid-template-columns: 1fr;
-  }
-  .grid {
-    grid-template-columns: 1fr;
-  }
-  .footer-grid {
-    grid-template-columns: 1fr;
-  }
-  .row {
+  .grid, .footer-grid, .row {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    grid-template-columns: 1fr;
   }
 }/*# sourceMappingURL=style.css.map */
