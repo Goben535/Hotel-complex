@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <hotel>
     <info>
-        <name>Гойда Отель</name>
+        <name>Гостиничный комплекс</name>
         <phone>+375 (29) 519-14-88</phone>
         <address>г. Минск, ул. Свердлова, 13а</address>
         <desc>Ваш идеальный отдых начинается здесь. Лучший сервис, комфортабельные номера и незабываемые впечатления.</desc>
@@ -38,15 +38,15 @@
             <id>2</id>
             <title>Люкс с видом на город</title>
             <price>120</price>
-            <image>img/room2.jpg</image>
-            <features>До 3 мест | 1 кровать</features>
+            <image>img/room3.jpg</image>
+            <features>До 3 мест | 1 кровать + диван</features>
             <desc>Просторный номер с панорамными окнами, гостиной зоной и премиальными удобствами.</desc>
         </room>
         <room>
             <id>3</id>
             <title>Семейный апартамент</title>
             <price>180</price>
-            <image>img/room3.jpg</image>
+            <image>img/room2.jpg</image>
             <features>До 4 мест | 2 кровати</features>
             <desc>Двухкомнатный номер с мини-кухней, идеально подходящий для комфортного отдыха с детьми.</desc>
         </room>
@@ -55,7 +55,7 @@
         <title>Свяжитесь с нами</title>
         <subtitle>Остались вопросы? Напишите нам, и наши менеджеры свяжутся с вами в ближайшее время.</subtitle>
         <emails>
-            <item>goydahotel@gmail.com</item>
+            <item>hotel@gmail.com</item>
         </emails>
         <schedule>
             <item>Служба бронирования: Круглосуточно</item>

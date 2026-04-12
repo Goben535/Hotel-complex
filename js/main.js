@@ -1,43 +1,63 @@
 document.addEventListener('DOMContentLoaded', function() {
     fetch('data.xml')
-        .then(response => response.text())
-        .then(xmlString => {
-            const parser = new DOMParser();
-            const xml = parser.parseFromString(xmlString, "application/xml");
-            const getTxt = (s) => xml.querySelector(s)?.textContent || "";
-
-            const hotelName = getTxt('info name');
-            const hotelPhone = getTxt('info phone');
-            const hotelAddr = getTxt('info address');
-
-            document.querySelectorAll('#logo, #logo-footer').forEach(el => el.textContent = hotelName);
-            document.querySelectorAll('#phone, #phone-footer').forEach(el => el.textContent = hotelPhone);
+        .then(function(response) {
+            return response.text();
+        })
+        .then(function(xmlString) {
+            let parser = new DOMParser();
+            let xml = parser.parseFromString(xmlString, "application/xml");
             
-            if(document.getElementById('desc-footer')) document.getElementById('desc-footer').textContent = getTxt('info desc');
-            if(document.getElementById('addr-footer')) document.getElementById('addr-footer').textContent = hotelAddr;
-
-            const navs = [document.getElementById('nav')];
-            const navFooter = document.getElementById('nav-footer');
-            const navItems = xml.querySelectorAll('navigation item');
-            
-            navs.forEach(nav => {
-                if (nav) {
-                    nav.innerHTML = '';
-                    navItems.forEach(item => {
-                        const li = document.createElement('li');
-                        li.innerHTML = `<a href="${item.getAttribute('link')}">${item.textContent}</a>`;
-                        nav.appendChild(li);
-                    });
+            let getTxt = function(s) {
+                let element = xml.querySelector(s);
+                if (element) {
+                    return element.textContent;
                 }
-            });
+                return "";
+            };
+
+            let hotelName = getTxt('info name');
+            let hotelPhone = getTxt('info phone');
+            let hotelAddr = getTxt('info address');
+
+            let logos = document.querySelectorAll('#logo, #logo-footer');
+            for (let i = 0; i < logos.length; i++) {
+                logos[i].textContent = hotelName;
+            }
+
+            let phones = document.querySelectorAll('#phone, #phone-footer');
+            for (let i = 0; i < phones.length; i++) {
+                phones[i].textContent = hotelPhone;
+            }
+            
+            if (document.getElementById('desc-footer')) {
+                document.getElementById('desc-footer').textContent = getTxt('info desc');
+            }
+            if (document.getElementById('addr-footer')) {
+                document.getElementById('addr-footer').textContent = hotelAddr;
+            }
+
+            let navs = [document.getElementById('nav')];
+            let navFooter = document.getElementById('nav-footer');
+            let navItems = xml.querySelectorAll('navigation item');
+            
+            for (let i = 0; i < navs.length; i++) {
+                if (navs[i]) {
+                    navs[i].innerHTML = '';
+                    for (let j = 0; j < navItems.length; j++) {
+                        let li = document.createElement('li');
+                        li.innerHTML = '<a href="' + navItems[j].getAttribute('link') + '">' + navItems[j].textContent + '</a>';
+                        navs[i].appendChild(li);
+                    }
+                }
+            }
             
             if (navFooter) {
                 navFooter.innerHTML = '';
-                navItems.forEach(item => {
-                    const li = document.createElement('li');
-                    li.innerHTML = `<a href="${item.getAttribute('link')}">${item.textContent}</a>`;
+                for (let i = 0; i < navItems.length; i++) {
+                    let li = document.createElement('li');
+                    li.innerHTML = '<a href="' + navItems[i].getAttribute('link') + '">' + navItems[i].textContent + '</a>';
                     navFooter.appendChild(li);
-                });
+                }
             }
 
             if (document.getElementById('title-hero')) {
@@ -49,60 +69,41 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.getElementById('title-rooms').textContent = getTxt('rooms_page title');
                 document.getElementById('desc-rooms').textContent = getTxt('rooms_page description');
 
-                const container = document.getElementById('rooms-list');
-                const currency = getTxt('currency');
-                const rooms = xml.querySelectorAll('room');
+                let container = document.getElementById('rooms-list');
+                let currency = getTxt('currency');
+                let rooms = xml.querySelectorAll('room');
 
-                rooms.forEach(room => {
-                    const card = document.createElement('div');
+                for (let i = 0; i < rooms.length; i++) {
+                    let card = document.createElement('div');
                     card.className = 'card';
                     card.innerHTML = `
-                        <div class="img" style="background-image: url('${room.querySelector('image').textContent}')">
-                            <div class="badge">${room.querySelector('price').textContent}${currency} / ночь</div>
+                        <div class="img" style="background-image: url('${rooms[i].querySelector('image').textContent}')">
+                            <div class="badge">${rooms[i].querySelector('price').textContent}${currency} / ночь</div>
                         </div>
                         <div class="info">
-                            <span class="tag">${room.querySelector('features').textContent}</span>
-                            <h3>${room.querySelector('title').textContent}</h3>
-                            <p>${room.querySelector('desc').textContent}</p>
+                            <span class="tag">${rooms[i].querySelector('features').textContent}</span>
+                            <h3>${rooms[i].querySelector('title').textContent}</h3>
+                            <p>${rooms[i].querySelector('desc').textContent}</p>
                             <a href="form.html" class="btn-alt">Выбрать этот номер</a>
                         </div>
                     `;
                     container.appendChild(card);
-                });
+                }
             }
 
             if (document.getElementById('title-contacts')) {
-                document.getElementById('title-contacts').textContent = getTxt('contacts_page title') || "Контакты";
-                document.getElementById('desc-contacts').textContent = getTxt('contacts_page subtitle') || "Мы всегда на связи, чтобы помочь вам.";
+                document.getElementById('title-contacts').textContent = getTxt('contacts_page title');
+                document.getElementById('desc-contacts').textContent = getTxt('contacts_page subtitle');
             }
 
-            if(document.getElementById('addr-info')) document.getElementById('addr-info').textContent = hotelAddr;
-            if(document.getElementById('phone-info')) document.getElementById('phone-info').textContent = hotelPhone;
-            if(document.getElementById('email-info')) {
-                const xmlEmail = getTxt('contacts_page emails item');
-                document.getElementById('email-info').textContent = xmlEmail ? xmlEmail : "goydahotel@gmail.com"; 
+            if (document.getElementById('addr-info')) {
+                document.getElementById('addr-info').textContent = hotelAddr;
+            }
+            if (document.getElementById('phone-info')) {
+                document.getElementById('phone-info').textContent = hotelPhone;
+            }
+            if (document.getElementById('email-info')) {
+                document.getElementById('email-info').textContent = getTxt('contacts_page emails item'); 
             }
         });
-
-    const form = document.getElementById('form-msg');
-    if (form) {
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const formData = new FormData(form);
-            console.log("Данные для XML:", Object.fromEntries(formData));
-            alert("Сообщение успешно отправлено!");
-            form.reset();
-        });
-    }
-
-    const bookingForm = document.getElementById('form-book');
-    if (bookingForm) {
-        bookingForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const formData = new FormData(bookingForm);
-            console.log("Данные бронирования:", Object.fromEntries(formData));
-            alert("Заявка на бронирование отправлена!");
-            bookingForm.reset();
-        });
-    }
 });
