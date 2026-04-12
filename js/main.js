@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', function() {
             
             if(document.getElementById('desc-footer')) document.getElementById('desc-footer').textContent = getTxt('info desc');
             if(document.getElementById('addr-footer')) document.getElementById('addr-footer').textContent = hotelAddr;
-            if(document.getElementById('copy')) document.getElementById('copy').textContent = getTxt('info copyright');
 
             const navs = [document.getElementById('nav')];
             const navFooter = document.getElementById('nav-footer');
