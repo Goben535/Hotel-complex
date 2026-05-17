@@ -105,5 +105,14 @@ document.addEventListener('DOMContentLoaded', function() {
             if (document.getElementById('email-info')) {
                 document.getElementById('email-info').textContent = getTxt('contacts_page emails item'); 
             }
+
+            let form = document.querySelector('form');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('Форма успешно отправлена!');
+                    form.reset();
+                });
+            }
         });
 });
