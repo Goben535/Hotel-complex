@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="ru"> <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Номера и цены — Гранд Отель</title>
+    <title>Номера и цены</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -24,7 +25,7 @@
 </header>
     <main class="container">
         <section class="section-h2">
-            <h1 id="title-rooms"></h1>
+            <h1 id="title-rooms">Номера и цены</h1>
             <p id="desc-rooms"></p>
         </section>
 
@@ -33,20 +34,22 @@
     </main>
 
     <footer class="footer">
-    <div class="container footer-grid">
-        <div class="col">
-            <h2 id="logo-footer"></h2> 
-            <p id="desc-footer" class="text"></p>
+        <div class="container footer-grid">
+            <div class="col">
+                <h3 id="logo-footer">Гостиничный комплекс</h3>
+                <p id="desc-footer" class="text"></p>
+            </div>
+            <div class="col">
+                <h4>Навигация</h4>
+                <ul id="nav-footer"></ul>
+            </div>
+            <div class="col">
+                <h4>Контакты</h4>
+                <p id="addr-footer" class="text"></p>
+                <p id="phone-footer" class="text"></p>
+            </div>
         </div>
-        <div class="col">
-            <h3>Навигация</h3> <ul id="nav-footer"></ul>
-        </div>
-        <div class="col">
-            <h3>Контакты</h3> <p id="addr-footer" class="text"></p>
-            <p id="phone-footer" class="text"></p>
-        </div>
-    </div>
-</footer>
+    </footer>
 
     <script src="js/main.js"></script>
 </body>
