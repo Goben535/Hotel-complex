@@ -440,13 +440,43 @@ body {
 
     .hero {
         height: 60vh; 
-        padding: 20px;
+        padding: 40px;
     }
     .hero h1 { 
         font-size: 2.5rem; 
     }
+    .hero p {
+        font-size: 1.1rem;
+    }
+    .section-h2 h2 {
+        font-size: 1.8rem;
+    }
     .grid, .footer-grid, .row {
         flex-direction: column; 
         grid-template-columns: 1fr; 
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        height: auto;
+        padding: 30px 15px;
+    }
+    .hero h1 { 
+        font-size: 1.8rem; 
+    }
+    .hero p {
+        font-size: 0.95rem;
+    }
+    .section-h2 h2 {
+        font-size: 1.5rem;
+    }
+    .header .nav ul {
+        padding: 15px 0;
+        gap: 10px;
+    }
+    .container, section {
+        padding-left: 15px;
+        padding-right: 15px;
     }
 }
