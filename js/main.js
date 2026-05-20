@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 let container = document.getElementById('rooms-list');
                 let currency = getTxt('currency');
-                let rooms = xml.querySelectorAll('room');
+                let rooms = xml.querySelectorAll('rooms_list room');
 
                 for (let i = 0; i < rooms.length; i++) {
                     let card = document.createElement('div');

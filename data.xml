@@ -57,9 +57,5 @@
         <emails>
             <item>hotel@gmail.com</item>
         </emails>
-        <schedule>
-            <item>Служба бронирования: Круглосуточно</item>
-            <item>Ресепшн: Круглосуточно</item>
-        </schedule>
     </contacts_page>
 </hotel>
